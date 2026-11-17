@@ -1,0 +1,32 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": { "major": 3, "minor": 28, "patch": 0 },
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "AVIRAH_BUILD_TESTS": "ON",
+        "AVIRAH_ENABLE_WT_PROTOTYPE": "OFF"
+      }
+    },
+    { "name": "linux-gcc-debug", "inherits": "base", "condition": { "type": "equals", "lhs": "${hostSystemName}", "rhs": "Linux" }, "cacheVariables": { "CMAKE_CXX_COMPILER": "g++", "CMAKE_C_COMPILER": "gcc" } },
+    { "name": "linux-clang-debug", "inherits": "base", "condition": { "type": "equals", "lhs": "${hostSystemName}", "rhs": "Linux" }, "cacheVariables": { "CMAKE_CXX_COMPILER": "clang++", "CMAKE_C_COMPILER": "clang" } },
+    { "name": "windows-msvc-debug", "inherits": "base", "condition": { "type": "equals", "lhs": "${hostSystemName}", "rhs": "Windows" }, "cacheVariables": { "CMAKE_CXX_COMPILER": "cl", "CMAKE_C_COMPILER": "cl" } },
+    { "name": "windows-msvc-release", "inherits": "windows-msvc-debug", "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" } },
+    { "name": "linux-gcc-release", "inherits": "linux-gcc-debug", "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" } }
+  ],
+  "buildPresets": [
+    { "name": "linux-gcc-debug", "configurePreset": "linux-gcc-debug" },
+    { "name": "windows-msvc-debug", "configurePreset": "windows-msvc-debug" },
+    { "name": "linux-gcc-release", "configurePreset": "linux-gcc-release" },
+    { "name": "windows-msvc-release", "configurePreset": "windows-msvc-release" }
+  ],
+  "testPresets": [
+    { "name": "linux-gcc-debug", "configurePreset": "linux-gcc-debug", "output": { "outputOnFailure": true } },
+    { "name": "windows-msvc-debug", "configurePreset": "windows-msvc-debug", "output": { "outputOnFailure": true } }
+  ]
+}

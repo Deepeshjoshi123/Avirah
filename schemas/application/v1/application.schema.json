@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://avirah.dev/schemas/application/v1/application.schema.json",
+  "title": "Avirah application",
+  "type": "object",
+  "required": ["api_version", "metadata", "spec"],
+  "properties": {
+    "api_version": { "const": "avirah.application/v1" },
+    "metadata": { "type": "object", "required": ["name"] },
+    "spec": { "type": "object" }
+  },
+  "additionalProperties": false
+}

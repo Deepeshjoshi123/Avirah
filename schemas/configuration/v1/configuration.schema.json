@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://avirah.dev/schemas/configuration/v1/configuration.schema.json",
+  "title": "Avirah configuration",
+  "type": "object",
+  "required": ["schema_version", "profile"],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": { "const": "avirah.config/v1" },
+    "profile": { "enum": ["control_only", "lite", "balanced"] }
+  }
+}

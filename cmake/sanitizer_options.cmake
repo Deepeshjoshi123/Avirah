@@ -1,0 +1,8 @@
+function(avirah_enable_sanitizers target)
+  if(MSVC)
+    message(WARNING "Sanitizers are not enabled by this preset on MSVC")
+  else()
+    target_compile_options(${target} INTERFACE -fsanitize=address,undefined -fno-omit-frame-pointer)
+    target_link_options(${target} INTERFACE -fsanitize=address,undefined)
+  endif()
+endfunction()

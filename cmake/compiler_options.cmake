@@ -1,0 +1,8 @@
+function(avirah_configure_compiler_options target)
+  if(MSVC)
+    target_compile_options(${target} INTERFACE /W4 /permissive- /EHsc /utf-8)
+    target_compile_definitions(${target} INTERFACE _CRT_SECURE_NO_WARNINGS NOMINMAX WIN32_LEAN_AND_MEAN)
+  else()
+    target_compile_options(${target} INTERFACE -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion)
+  endif()
+endfunction()

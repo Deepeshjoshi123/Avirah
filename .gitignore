@@ -1,0 +1,88 @@
+# Build and CMake output
+/build/
+/out/
+/cmake-build-*/
+/vcpkg_installed/
+/.cache/
+/.ninja_deps
+/.ninja_log
+compile_commands.json
+CMakeCache.txt
+CMakeFiles/
+CTestTestfile.cmake
+cmake_install.cmake
+Makefile
+install_manifest.txt
+Testing/
+
+# Generated binaries and libraries
+*.a
+*.lib
+*.dll
+*.dylib
+*.so
+*.so.*
+*.exe
+*.out
+*.pdb
+*.ilk
+*.obj
+*.o
+*.gch
+
+# Visual Studio / IDE state
+*.user
+*.suo
+*.vcxproj.user
+.vs/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Tool and test artifacts
+coverage/
+*.gcda
+*.gcno
+*.profraw
+*.profdata
+*.stackdump
+*.log
+test-results/
+artifacts/
+
+# Local configuration, credentials and runtime data
+.env
+.env.*
+!.env.example
+config/managed/
+data/
+runtime/
+secrets/
+*.key
+*.pem
+*.p12
+*.pfx
+*.sqlite
+*.sqlite3
+*.db
+
+# Internal project planning and architecture material
+# The installable/public codebase must not include these materials.
+/docs/
+/Avirah_Phase_Wise_Integration_Plan.md
+**/architecture/
+**/architecture.md
+**/architecture/**
+**/acceptance/
+
+# Temporary/editor/OS files
+*.tmp
+*.temp
+*.swp
+*.swo
+*.orig
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
