@@ -22,6 +22,17 @@ jobs:
     runs-on: windows-2025
     steps:
       - uses: actions/checkout@v4
+      - name: Initialize MSVC developer environment
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x64
+      - name: Verify Windows build tools
+        shell: pwsh
+        run: |
+          Get-Command cl
+          cl 2>&1 | Select-Object -First 1
+          cmake --version
+          ninja --version
       - name: Configure
         run: cmake --preset windows-msvc-debug
       - name: Build
