@@ -1,0 +1,20 @@
+{
+  "schema_version": "avirah.dependencies/v1",
+  "status": "pending_p00_review",
+  "policy": "Every dependency must have an exact version, source URL, license, checksum and build options before a release build or dependency-enabled CI job is enabled.",
+  "dependencies": [
+    { "name": "cmake", "minimum_version": "3.28", "source": "https://cmake.org/", "status": "toolchain_requirement" },
+    { "name": "ninja", "minimum_version": "not_yet_selected", "source": "https://ninja-build.org/", "status": "toolchain_requirement" },
+    { "name": "wt", "version": "4.14.3", "source": "https://www.webtoolkit.eu/wt/download", "license": "pending_p00_distribution_decision", "status": "optional_prototype" },
+    { "name": "boost-asio", "version": "from_reviewed_vcpkg_baseline", "license": "BSL-1.0", "status": "pending_p00_baseline" },
+    { "name": "boost-beast", "version": "from_reviewed_vcpkg_baseline", "license": "BSL-1.0", "status": "pending_p00_baseline" },
+    { "name": "openssl", "version": "from_reviewed_vcpkg_baseline", "license": "Apache-2.0", "status": "pending_p00_baseline" },
+    { "name": "sqlite3", "version": "from_reviewed_vcpkg_baseline", "license": "Public-domain", "status": "pending_p00_baseline" },
+    { "name": "yaml-cpp", "version": "from_reviewed_vcpkg_baseline", "license": "MIT", "status": "pending_p00_baseline" },
+    { "name": "nlohmann-json", "version": "from_reviewed_vcpkg_baseline", "license": "MIT", "status": "pending_p00_baseline" },
+    { "name": "libsodium", "version": "from_reviewed_vcpkg_baseline", "license": "ISC", "status": "pending_p00_baseline" },
+    { "name": "fmt", "version": "from_reviewed_vcpkg_baseline", "license": "MIT", "status": "pending_p00_baseline" },
+    { "name": "spdlog", "version": "from_reviewed_vcpkg_baseline", "license": "MIT", "status": "pending_p00_baseline" },
+    { "name": "catch2", "version": "from_reviewed_vcpkg_baseline", "license": "BSL-1.0", "status": "pending_p00_baseline" }
+  ]
+}

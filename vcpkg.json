@@ -1,0 +1,20 @@
+{
+  "name": "avirah",
+  "version-string": "0.1.0",
+  "builtin-baseline": "0000000000000000000000000000000000000000",
+  "dependencies": [
+    { "name": "boost-beast" },
+    { "name": "boost-asio" },
+    { "name": "openssl" },
+    { "name": "sqlite3" },
+    { "name": "yaml-cpp" },
+    { "name": "nlohmann-json" },
+    { "name": "libsodium" },
+    { "name": "fmt" },
+    { "name": "spdlog" },
+    { "name": "catch2" },
+    { "name": "wt", "features": ["http"] }
+  ],
+  "overrides": [],
+  "builtin-baseline-comment": "REPLACE BEFORE P01 RELEASE GATE: pin to the reviewed vcpkg commit used by CI."
+}

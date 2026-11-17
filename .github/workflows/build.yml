@@ -1,0 +1,30 @@
+name: build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  linux:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install build tools
+        run: sudo apt-get update && sudo apt-get install -y cmake ninja-build g++
+      - name: Configure
+        run: cmake --preset linux-gcc-debug
+      - name: Build
+        run: cmake --build --preset linux-gcc-debug
+      - name: Test
+        run: ctest --preset linux-gcc-debug
+
+  windows:
+    runs-on: windows-2025
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure
+        run: cmake --preset windows-msvc-debug
+      - name: Build
+        run: cmake --build --preset windows-msvc-debug
+      - name: Test
+        run: ctest --preset windows-msvc-debug
